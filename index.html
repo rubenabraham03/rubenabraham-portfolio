@@ -17,6 +17,7 @@
         <a href="#education">Education</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
+        <a href="games/">Games</a>
         <button id="themeToggle" aria-label="Toggle theme">🌗</button>
       </nav>
     </div>
@@ -42,22 +43,55 @@
       <p>Hi, I am Ruben. I like turning ideas into useful products. I work across the stack and I care about clean code, simple design, and results.</p>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>YouTube Clone</h3>
-          <p>Built a full stack video platform with Next.js 15 and React 19 using Firebase Auth. Features responsive UI, video uploads, and comments.</p>
-          <p>Added Firebase Cloud Functions and a Docker based FFmpeg service for uploads and transcoding. Used separate storage buckets for raw and processed media.</p>
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="games-grid">  
+    <!-- Blackjack tiny window -->
+<!-- Blackjack tiny window -->
+    <div class="card">
+      <h3>Blackjack (tiny window)</h3>
+      <p>Play in the small window or open full size.</p>
+      <div class="embed-game">
+        <div class="embed-bar">
+          <span>Blackjack</span>
+          <div class="embed-actions">
+            <button class="btn" onclick="document.getElementById('bjFrame').src='games/blackjack.html?compact=1'">Reload</button>
+            <a class="btn primary" href="games/blackjack.html" target="_blank" rel="noreferrer">Open</a>
+          </div>
         </div>
-        <div class="card">
-          <h3>AI Frontend Generator</h3>
-          <p>Engineered an AI powered tool that turns natural language prompts into websites with the Google Gemini API.</p>
-          <p>Built a NestJS backend with JWT auth and tests. Built a React and Tailwind front end with Monaco Editor and GrapesJS. Deployed to AWS S3 with Firebase Admin SDK.</p>
-        </div>
+        <iframe
+          id="bjFrame"
+          class="game-frame"
+          src="games/blackjack.html?compact=1"
+          title="Blackjack tiny window"
+          loading="lazy"
+          sandbox="allow-scripts allow-same-origin">
+        </iframe>
       </div>
-    </section>
+    </div>
+
+    <!-- Typing tiny window -->
+    <div class="card">
+      <h3>Typing Test (tiny window)</h3>
+      <p>Type in the small window or open full size.</p>
+      <div class="embed-game">
+        <div class="embed-bar">
+          <span>Typing Test</span>
+          <div class="embed-actions">
+            <button class="btn" onclick="document.getElementById('ttFrame').src='games/typing.html?compact=1'">Reload</button>
+            <a class="btn primary" href="games/typing.html" target="_blank" rel="noreferrer">Open</a>
+          </div>
+        </div>
+        <iframe
+          id="ttFrame"
+          class="game-frame"
+          src="games/typing.html?compact=1"
+          title="Typing Test tiny window"
+          loading="lazy"
+          sandbox="allow-scripts allow-same-origin">
+        </iframe>
+      </div>
+    </div>
 
     <!-- EXPERIENCE -->
     <section id="experience">
@@ -152,6 +186,18 @@
     <p>© 2025 Ruben Abraham • Built with HTML and CSS</p>
   </footer>
 
+  <!-- GAME MODAL -->
+  <div id="gameModal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" onclick="closeGame()"></div>
+    <div class="modal-body" role="dialog" aria-modal="true" aria-label="Game window">
+      <div class="modal-bar">
+        <span id="gameTitle">Game</span>
+        <button class="btn" onclick="closeGame()" aria-label="Close">Close</button>
+      </div>
+      <iframe id="gameFrame" title="Game frame" loading="lazy"></iframe>
+    </div>
+  </div>
+
   <!-- SCRIPTS -->
   <script>
     // Smooth scroll
@@ -171,6 +217,32 @@
       body.classList.toggle('dark');
       localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
     });
+
+    // Game modal
+    function openGame(path, title) {
+      const m = document.getElementById('gameModal');
+      const f = document.getElementById('gameFrame');
+      document.getElementById('gameTitle').textContent = title || 'Game';
+      f.src = path; // e.g., "games/blackjack.html"
+      m.classList.add('show');
+      m.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeGame() {
+      const m = document.getElementById('gameModal');
+      const f = document.getElementById('gameFrame');
+      m.classList.remove('show');
+      m.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      f.src = 'about:blank';
+    }
+    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeGame(); });
+
+    // Optional deep link: ?game=blackjack or ?game=typing
+    const params = new URLSearchParams(location.search);
+    const g = params.get('game');
+    if (g === 'blackjack') openGame('games/blackjack.html', 'Blackjack');
+    if (g === 'typing') openGame('games/typing.html', 'Typing Test');
   </script>
 </body>
 </html>

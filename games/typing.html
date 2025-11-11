@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Typing Test</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+  html, body { height: 100%; overflow: hidden; }
+  .wrap { max-width: 800px; margin: 0 auto; padding: 8px 10px; }
+  .hdr { display:flex; align-items:center; justify-content:space-between; margin-bottom:6px; }
+  .hdr h1 { margin:0; font-size: 1rem; }
+  .panel { padding:10px; border:1px solid var(--card-border); border-radius:12px; background: var(--card); }
+  .row { display:flex; gap:10px; align-items:center; justify-content:space-between; }
+  .stats { color: var(--muted); font-size:.95rem; }
+  .words { margin:8px 0; line-height: 1.7; font-size: 1rem; user-select: none; height: 110px; overflow: hidden; }
+  .word { margin-right: 8px; }
+  .active { outline: 2px solid var(--primary); border-radius: 6px; padding: 0 2px; }
+  input { width:100%; padding:8px 10px; border-radius:8px; border:1px solid var(--card-border); background: var(--card); color: var(--text); font-size:.95rem; }
+  .controls { display:flex; gap:6px; margin-top:8px; }
+  .btn { cursor:pointer; border:1px solid var(--card-border); border-radius:8px; padding:6px 10px; background: var(--card); color: var(--text); font-size:.9rem; }
+  .btn.primary { background: linear-gradient(135deg, var(--primary), var(--primary-2)); color:#0b0d12; border:0; }
+  /* Compact tweaks */
+  .compact .words { height: 100px; font-size: .95rem; }
+  .compact .btn { padding:5px 8px; font-size:.85rem; }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="hdr">
+    <h1>Typing Test</h1>
+    <div class="stats">Time <span id="time">60</span>s • WPM <span id="wpm">0</span> • Acc <span id="acc">100</span>%</div>
+  </div>
+
+  <div class="panel">
+    <div id="words" class="words"></div>
+    <input id="input" type="text" placeholder="Start typing to begin">
+    <div class="controls">
+      <button id="restart" class="btn">Restart</button>
+      <button id="hard" class="btn">Hard words</button>
+      <button id="start" class="btn primary">Start</button>
+    </div>
+  </div>
+</main>
+
+<script>
+  // Compact mode class
+  (function(){
+    const p = new URLSearchParams(location.search);
+    if (p.get('compact') === '1') document.body.classList.add('compact');
+  })();
+
+  const easy = "build code learn ship clean fast simple scale design data cloud state model server client array logic system open source query test".split(" ");
+  const hard = "synchronize parallelism polymorphism idempotent isomorphic disambiguation memoization backpressure observability serialization denormalization".split(" ");
+
+  let words = [], idx = 0, started = false, time = 60, correct = 0, typed = 0, timer = null;
+
+  const wordsEl = document.getElementById("words");
+  const input = document.getElementById("input");
+  const timeEl = document.getElementById("time");
+  const wpmEl = document.getElementById("wpm");
+  const accEl = document.getElementById("acc");
+
+  function pick(list, n=80) {   // fewer words so no scrolling
+    const out = [];
+    for (let i = 0; i < n; i++) out.push(list[Math.floor(Math.random() * list.length)]);
+    return out;
+  }
+
+  function draw() {
+    wordsEl.innerHTML = words.map((w, i) => {
+      let cls = "word";
+      if (i === idx) cls += " active";
+      return `<span class="${cls}">${w}</span>`;
+    }).join(" ");
+  }
+
+  function startTest() {
+    if (timer) clearInterval(timer);
+    time = 60; correct = 0; typed = 0; idx = 0; started = false;
+    words = pick(easy);  // compact: 80 words only
+    draw();
+    timeEl.textContent = time;
+    wpmEl.textContent = "0";
+    accEl.textContent = "100";
+    input.value = "";
+    input.disabled = false;
+    // focus after a tick so it works well in iframes
+    setTimeout(() => input.focus(), 0);
+  }
+
+  function startClock() {
+    if (started) return;
+    started = true;
+    timer = setInterval(() => {
+      time--;
+      timeEl.textContent = time;
+      if (time <= 0) { clearInterval(timer); input.disabled = true; }
+    }, 1000);
+  }
+
+  input.addEventListener("input", () => {
+    startClock();
+    const val = input.value.trim();
+    if (input.value.endsWith(" ")) {
+      const target = words[idx]; typed++; if (val === target) correct++;
+      idx++; input.value = ""; draw();
+    }
+    const minutes = (60 - time) / 60 || 1/60;
+    const wpm = Math.round(correct / minutes);
+    const accuracy = typed ? Math.round((correct / typed) * 100) : 100;
+    wpmEl.textContent = wpm; accEl.textContent = accuracy;
+  });
+
+  document.getElementById("restart").onclick = startTest;
+  document.getElementById("hard").onclick = () => { words = pick(hard); idx = 0; draw(); input.value = ""; input.focus(); };
+  document.getElementById("start").onclick = startClock;
+
+  startTest();
+</script>
+</body>
+</html>
