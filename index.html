@@ -14,6 +14,8 @@
       <nav>
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
         <button id="themeToggle" aria-label="Toggle theme">🌗</button>
       </nav>
@@ -24,7 +26,7 @@
   <section id="hero" class="hero">
     <div class="container hero-content">
       <h2>Software Engineer • Builder • Student</h2>
-      <p>I design and ship modern web apps with clean UX and real impact. Passionate about building scalable software and creative solutions that make a difference.</p>
+      <p>I design and ship modern web apps with clean UX and real impact. I enjoy building scalable software and clear interfaces.</p>
       <div class="cta-buttons">
         <a href="#projects" class="btn primary">View Projects</a>
         <a href="mailto:rubenabraham03@gmail.com" class="btn secondary">Contact Me</a>
@@ -37,7 +39,7 @@
     <!-- ABOUT -->
     <section id="intro">
       <h2>About Me</h2>
-      <p>Hi, I'm Ruben — a developer who loves transforming ideas into real, tangible projects. I enjoy working with full-stack technologies and exploring how design and code blend together to create meaningful digital experiences.</p>
+      <p>Hi, I am Ruben. I like turning ideas into useful products. I work across the stack and I care about clean code, simple design, and results.</p>
     </section>
 
     <!-- PROJECTS -->
@@ -46,11 +48,13 @@
       <div class="grid">
         <div class="card">
           <h3>YouTube Clone</h3>
-          <p>Full-stack video platform with authentication, upload pipeline, and metrics dashboard.</p>
+          <p>Built a full stack video platform with Next.js 15 and React 19 using Firebase Auth. Features responsive UI, video uploads, and comments.</p>
+          <p>Added Firebase Cloud Functions and a Docker based FFmpeg service for uploads and transcoding. Used separate storage buckets for raw and processed media.</p>
         </div>
         <div class="card">
           <h3>AI Frontend Generator</h3>
-          <p>Prompt-based React component generator powered by OpenAI and Tailwind CSS.</p>
+          <p>Engineered an AI powered tool that turns natural language prompts into websites with the Google Gemini API.</p>
+          <p>Built a NestJS backend with JWT auth and tests. Built a React and Tailwind front end with Monaco Editor and GrapesJS. Deployed to AWS S3 with Firebase Admin SDK.</p>
         </div>
       </div>
     </section>
@@ -60,8 +64,76 @@
       <h2>Experience</h2>
       <div class="grid">
         <div class="card">
-          <h3>Handshake AI Fellow</h3>
-          <p>Created prompts, ranked outputs, and improved data quality for LLMs — helping enhance model accuracy and efficiency.</p>
+          <h3>AI Fellow — Handshake</h3>
+          <p><em>Oct 2025 to Present • Remote</em></p>
+          <ul>
+            <li>Crafted and refined prompts for LLM evaluation and ranked outputs to improve response quality and domain reasoning.</li>
+            <li>Assessed accuracy and fairness and resolved edge cases with precise annotations and guideline updates. Collaborated with reviewers to streamline work.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>AI and Automation Intern — Outamation</h3>
+          <p><em>May 2025 to July 2025 • SouthLake, TX</em></p>
+          <ul>
+            <li>Built a scalable data pipeline for mortgage applications using Python. Cleaned and preprocessed scanned documents and improved efficiency by 30 percent.</li>
+            <li>Automated OCR and compliance checks with Tesseract and Amazon Textract and custom validation scripts. Cut manual review time by 40 percent with 95 percent plus accuracy.</li>
+            <li>Integrated RAG and NLP or vision models for classification and key data extraction.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Machine Learning Engineer Intern — Argonne National Laboratory</h3>
+          <p><em>May 2024 to September 2024 • Lemont, IL</em></p>
+          <ul>
+            <li>Trained models on sky images to predict sky class and solar output. Reached 98 percent test accuracy with a ResNet50 based model and R² of 0.97 for power prediction.</li>
+            <li>Combined Mini MPL data with image and solar sets to show LiDAR improves prediction and classification.</li>
+            <li>Preprocessed more than 7,000 images and presented findings to an audience of more than 300.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Software Engineer Intern — Argonne National Laboratory</h3>
+          <p><em>Jan 2024 to May 2024 • Lemont, IL</em></p>
+          <ul>
+            <li>Built a Python app for automated analysis of semiconductor failure data. Reduced processing from hours to minutes.</li>
+            <li>Used NumPy, pandas, and OpenCV for image clarity, data visuals, and data sync.</li>
+            <li>Tested more than 340 semiconductors post refinement and improved code to extract and store instrument data.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <h2>Education</h2>
+      <div class="card">
+        <h3>University of Illinois Urbana–Champaign</h3>
+        <p><em>Urbana–Champaign, IL</em></p>
+        <p>Bachelor of Science in Computer Science and Advertising. GPA 3.89. Expected May 2027.</p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Languages</h3>
+          <p>Python, Java, C, C plus plus, SQL, JavaScript and TypeScript, HTML and CSS, Bash</p>
+        </div>
+        <div class="card">
+          <h3>Frameworks</h3>
+          <p>React, Next.js, Node.js, NestJS, Flask, Spring Boot, Express, Angular</p>
+        </div>
+        <div class="card">
+          <h3>Developer Tools</h3>
+          <p>Git, Docker, AWS, Firebase, VS Code, PyCharm, Postman</p>
+        </div>
+        <div class="card">
+          <h3>Databases</h3>
+          <p>PostgreSQL, MongoDB, Firestore</p>
+        </div>
+        <div class="card">
+          <h3>Libraries</h3>
+          <p>NumPy, pandas, PyTorch, TensorFlow, OpenCV, scikit learn, Matplotlib</p>
         </div>
       </div>
     </section>
@@ -69,28 +141,24 @@
     <!-- CONTACT -->
     <section id="contact">
       <h2>Contact</h2>
-      <p>If you’d like to connect, reach out through email or LinkedIn:</p>
-      <ul>
-        <li><strong>Email:</strong> <a href="mailto:rubenabraham03@gmail.com">rubenabraham03@gmail.com</a></li>
-        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/rubenabraham/" target="_blank">linkedin.com/in/rubenabraham</a></li>
-      </ul>
+      <p>Email: <a href="mailto:rubenabraham03@gmail.com">rubenabraham03@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/rubenabraham/" target="_blank" rel="noreferrer">linkedin.com/in/rubenabraham</a></p>
+      <p>GitHub: <a href="https://github.com/rubenabraham03" target="_blank" rel="noreferrer">github.com/rubenabraham03</a></p>
     </section>
   </main>
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 Ruben Abraham • Built with ❤️ using HTML & CSS</p>
+    <p>© 2025 Ruben Abraham • Built with HTML and CSS</p>
   </footer>
 
   <!-- SCRIPTS -->
   <script>
     // Smooth scroll
-    document.querySelectorAll('a[href^=\"#\"]').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
       });
     });
 
@@ -99,7 +167,6 @@
     const body = document.body;
     const storedTheme = localStorage.getItem('theme');
     if (storedTheme === 'dark') body.classList.add('dark');
-
     toggle.addEventListener('click', () => {
       body.classList.toggle('dark');
       localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
