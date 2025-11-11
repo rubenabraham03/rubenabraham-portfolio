@@ -7,50 +7,103 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Ruben Abraham</h1>
-    <nav>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <!-- HEADER / NAV -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <h1 class="logo">Ruben Abraham</h1>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <button id="themeToggle" aria-label="Toggle theme">🌗</button>
+      </nav>
+    </div>
   </header>
 
-  <main>
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="container hero-content">
+      <h2>Software Engineer • Builder • Student</h2>
+      <p>I design and ship modern web apps with clean UX and real impact. Passionate about building scalable software and creative solutions that make a difference.</p>
+      <div class="cta-buttons">
+        <a href="#projects" class="btn primary">View Projects</a>
+        <a href="mailto:rubenabraham03@gmail.com" class="btn secondary">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <main class="container">
+    <!-- ABOUT -->
     <section id="intro">
       <h2>About Me</h2>
-      <p>Software Engineer • Builder • Student. I design and ship modern web apps with clean UX and real impact.</p>
+      <p>Hi, I'm Ruben — a developer who loves transforming ideas into real, tangible projects. I enjoy working with full-stack technologies and exploring how design and code blend together to create meaningful digital experiences.</p>
     </section>
 
+    <!-- PROJECTS -->
     <section id="projects">
       <h2>Projects</h2>
-      <div class="card">
-        <h3>YouTube Clone</h3>
-        <p>Full-stack video platform with auth, uploads, and metrics.</p>
-      </div>
-      <div class="card">
-        <h3>AI Frontend Generator</h3>
-        <p>Prompt to React component generator using OpenAI and Tailwind.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>YouTube Clone</h3>
+          <p>Full-stack video platform with authentication, upload pipeline, and metrics dashboard.</p>
+        </div>
+        <div class="card">
+          <h3>AI Frontend Generator</h3>
+          <p>Prompt-based React component generator powered by OpenAI and Tailwind CSS.</p>
+        </div>
       </div>
     </section>
 
+    <!-- EXPERIENCE -->
     <section id="experience">
       <h2>Experience</h2>
-      <div class="card">
-        <h3>Handshake AI Fellow</h3>
-        <p>Created prompts, ranked outputs, and improved data quality for LLMs.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Handshake AI Fellow</h3>
+          <p>Created prompts, ranked outputs, and improved data quality for LLMs — helping enhance model accuracy and efficiency.</p>
+        </div>
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:rony@example.com">rubenabraham03@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/">https://www.linkedin.com/in/rubenabraham/</a></p>
+      <p>If you’d like to connect, reach out through email or LinkedIn:</p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:rubenabraham03@gmail.com">rubenabraham03@gmail.com</a></li>
+        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/rubenabraham/" target="_blank">linkedin.com/in/rubenabraham</a></li>
+      </ul>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer>
-    <p>© 2025 Ruben Abraham</p>
+    <p>© 2025 Ruben Abraham • Built with ❤️ using HTML & CSS</p>
   </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^=\"#\"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Theme toggle
+    const toggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme === 'dark') body.classList.add('dark');
+
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
 </body>
 </html>
