@@ -1,10 +1,11 @@
+import TypingText from "../components/TypingText";
+
 export default function AboutPage() {
   return (
     <>
             <section id="hero" className="hero">
         <div className="container hero-flex">
 
-          {/* LEFT — Image */}
           <div className="hero-left">
             <img
               src="/ruben-headshot.JPG"
@@ -13,15 +14,28 @@ export default function AboutPage() {
             />
           </div>
 
-          {/* RIGHT — Text */}
           <div className="hero-right">
             <h2 className="hero-title">
-              Builder • Student
+              <TypingText text="Hi! My name is Ruben Abraham." speed={70} />
             </h2>
 
             <p className="hero-subtext">
-              I design and ship modern web apps with clean UX and real impact.
-              I enjoy building scalable software and clear interfaces.
+              I am a student at the University of Illinois Urbana Champaign, and I have loved building things for as long as I can remember. 
+              I went from making sandcastles and oversized tree forts with too many nails to building software. 
+              That curiosity to create never went away, and it is what led me to major in Computer Science and Advertising.
+                <br/><br/>
+              I like turning ideas into real products that feel clean, simple, and fast. 
+              I care about the code and the experience, which is why a combined major fits me so well. 
+              It also aligns with full stack development, where I get to shape the interface, build the backend, and bring everything together into something people can actually use.
+                <br/><br/>
+              I also enjoy building machine learning models. 
+              This started during my time at Argonne, where I worked on sky image classification and solar power prediction. 
+              I learned how much I enjoy working with real datasets, running experiments, and pushing model performance. 
+              Now, as an AI Fellow, I use that same mindset while fine tuning models, labeling data, and evaluating model behavior at scale.
+                <br/><br/>
+              Outside of school and projects, I usually play beach volleyball or read. 
+              Volleyball keeps me active and competitive while reading helps me slow down. 
+              I am currently reading Red Rising by Pierce Brown.
             </p>
 
             <div className="cta-buttons">
