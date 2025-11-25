@@ -1,1 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos" width="31.88" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 257"><defs><linearGradient id="IconifyId1813088fe1fbc01fb466" x1="-.828%" x2="57.636%" y1="7.652%" y2="78.411%"><stop offset="0%" stop-color="#41D1FF"></stop><stop offset="100%" stop-color="#BD34FE"></stop></linearGradient><linearGradient id="IconifyId1813088fe1fbc01fb467" x1="43.376%" x2="50.316%" y1="2.242%" y2="89.03%"><stop offset="0%" stop-color="#FFEA83"></stop><stop offset="8.333%" stop-color="#FFDD35"></stop><stop offset="100%" stop-color="#FFA800"></stop></linearGradient></defs><path fill="url(#IconifyId1813088fe1fbc01fb466)" d="M255.153 37.938L134.897 252.976c-2.483 4.44-8.862 4.466-11.382.048L.875 37.958c-2.746-4.814 1.371-10.646 6.827-9.67l120.385 21.517a6.537 6.537 0 0 0 2.322-.004l117.867-21.483c5.438-.991 9.574 4.796 6.877 9.62Z"></path><path fill="url(#IconifyId1813088fe1fbc01fb467)" d="M185.432.063L96.44 17.501a3.268 3.268 0 0 0-2.634 3.014l-5.474 92.456a3.268 3.268 0 0 0 3.997 3.378l24.777-5.718c2.318-.535 4.413 1.507 3.936 3.838l-7.361 36.047c-.495 2.426 1.782 4.5 4.151 3.78l15.304-4.649c2.372-.72 4.652 1.36 4.15 3.788l-11.698 56.621c-.732 3.542 3.979 5.473 5.943 2.437l1.313-2.028l72.516-144.72c1.215-2.423-.88-5.186-3.54-4.672l-25.505 4.922c-2.396.462-4.435-1.77-3.759-4.114l16.646-57.705c.677-2.35-1.37-4.583-3.769-4.113Z"></path></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Portfolio" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<circle id="Background_2_" fill="#F3CF3D" cx="256" cy="256" r="256"/>
+<path id="Shadow_2_" opacity="0.1" d="M511.639,269.621L404.442,164.48l-5.775,26.187l-90.549-62.374L201,138l-4.906,17.595
+	L191,184.333l-26.052,125.282l19.222,19.222l-77.344,53.324l129.739,129.109C242.98,511.752,249.461,512,256,512
+	C392.815,512,504.558,404.673,511.639,269.621z"/>
+<g id="Portfolio_1_">
+	<g>
+		<g>
+			<path fill="#42536C" d="M199.015,169.702v-18.98c0-5.926,4.986-10.729,11.139-10.729h91.693c6.153,0,11.141,4.804,11.141,10.729
+				v18.98h7.496V145.17c0-6.961-5.644-12.604-12.604-12.604H204.122c-6.961,0-12.604,5.643-12.604,12.604v24.532H199.015z"/>
+			<rect x="204.122" y="129.414" fill="#57687C" width="105.854" height="13.975"/>
+		</g>
+		<rect x="106.319" y="164.704" fill="#42536C" width="299.361" height="217.882"/>
+		<path fill="#57687C" d="M106.319,254.876c40.465,11.713,92.679,18.769,149.681,18.769c57.002,0,109.217-7.056,149.681-18.769
+			v-90.172H106.319V254.876z"/>
+		<g>
+			<rect x="247.223" y="281.563" fill="#E6E7E8" width="17.557" height="2.886"/>
+			<path fill="#E6E7E8" d="M247.223,246.677v32.411h17.557v-32.411H247.223z M256,277.246c-1.678,0-3.039-1.36-3.039-3.038
+				c0-1.679,1.361-3.039,3.039-3.039c1.678,0,3.039,1.36,3.039,3.039C259.039,275.886,257.678,277.246,256,277.246z"/>
+		</g>
+	</g>
+</g>
+</svg>

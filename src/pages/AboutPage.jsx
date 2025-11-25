@@ -25,33 +25,22 @@ export default function AboutPage() {
               That curiosity to create never went away, and it is what led me to major in Computer Science and Advertising.
                 <br/><br/>
               I like turning ideas into real products that feel clean, simple, and fast. 
-              I care about the code and the experience, which is why a combined major fits me so well. 
-              It also aligns with full stack development, where I get to shape the interface, build the backend, and bring everything together into something people can actually use.
-                <br/><br/>
-              I also enjoy building machine learning models. 
-              This started during my time at Argonne, where I worked on sky image classification and solar power prediction. 
-              I learned how much I enjoy working with real datasets, running experiments, and pushing model performance. 
-              Now, as an AI Fellow, I use that same mindset while fine tuning models, labeling data, and evaluating model behavior at scale.
+              I care about both the code and the experience, which is why a combined major fits me so well and why full stack development feels natural to me. 
+              I enjoy shaping the interface, building the backend, and bringing everything together into something people actually use. That same love for building carried into machine learning. 
+              At Argonne, I worked on sky image classification and solar power prediction, which showed me how much I enjoy working with real datasets, running experiments, and pushing model performance. 
+              Now, as an AI Fellow, I continue that work by fine tuning models, labeling data, and evaluating model behavior at scale.
                 <br/><br/>
               Outside of school and projects, I usually play beach volleyball or read. 
               Volleyball keeps me active and competitive while reading helps me slow down. 
               I am currently reading Red Rising by Pierce Brown.
             </p>
-
-            <div className="cta-buttons">
-              <a href="mailto:rubenabraham03@gmail.com" className="btn secondary">
-                Contact Me
-              </a>
-            </div>
           </div>
-
         </div>
       </section>
 
 
       {/* PLAYGROUND / GAMES */}
       <section>
-        <h2>Playground</h2>
         <p>Small games and gimmicks I built for fun.</p>
 
         <div className="games-grid">
